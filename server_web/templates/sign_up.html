@@ -1,0 +1,56 @@
+{% extends 'template.html' %}
+{% block sign_up %}
+
+
+<div class="mt-4">
+
+  <form method="POST" class="container-fluid w-25 ">
+    <h1> Inscription </h1>
+
+
+
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" class="form-control" id="nom" name="nom" aria-describedby="emailHelp"
+        placeholder="Entre un nom">
+    </div>
+
+    <div class="form-group">
+      <label for="Prenom">Prenom</label>
+      <input type="text" class="form-control" id="prenom" name="prenom" aria-describedby="emailHelp"
+        placeholder="Entre un prenom">
+    </div>
+
+
+    <div class="form-group">
+      <label for="email">adresse email</label>
+      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+        placeholder="Entre un email">
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Mot de passe</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Entre un mot de passe">
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputPassword2">Mot de passe(confirmé)</label>
+      <input type="password" class="form-control" id="password2" name="password2" placeholder="Entre un mot de passe">
+    </div>
+
+    <div class="form-group">
+      <label for="sexe">Choisi ton sexe</label>
+      <select class="form-control" id="sexe" name="sexe">
+        <option>Homme</option>
+        <option>Femme</option>
+
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4 d-flex">Envoyer</button>
+  </form>
+
+</div>
+{% endblock sign_up %}

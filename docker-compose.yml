@@ -1,0 +1,78 @@
+version: "3.7"
+
+services:
+  database:
+    container_name: my_db
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - db-config:/etc/mysql
+      - db-data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: app_running
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks:
+      - myapp
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - myapp
+  # client:
+  #     container_name : angular
+  #     build: ./client-running
+  #     ports:
+  #         - "4200:4200"
+  #     restart: always
+  #     volumes:
+  #         - ./client-running:/home/angular_app
+  #         - /home/angular_app/node_modules
+  #     networks:
+  #         - myapp
+
+  #server
+  # server:
+  #     container_name: express_server
+  #     build : ./api_running
+  #     ports:
+  #         - "8000:8000"
+
+  #     volumes:
+  #         - ./api_running:/api_running
+  #         - /api_running/node_modules/
+  #     networks:
+  #         - myapp
+  #     depends_on:
+  #         - database
+
+  #Nginx Service
+  # webserver:
+  #     container_name: webserver
+  #     restart: always
+  #     tty: true
+  #     build:
+  #         context : ./nginx
+  #     ports:
+  #     - "80:80"
+  #     - "443:443"
+  #     networks:
+  #         - myapp
+  #     depends_on:
+  #         - server
+networks:
+  myapp:
+
+volumes:
+  db-config:
+  db-data:

@@ -1,0 +1,19 @@
+{% extends 'template.html' %}
+{% block start_video %}
+
+<div class="container-fluid ">
+    {{entrainement_information}}
+
+    <h1>Entrainement </h1>
+    {#
+        <div class="container d-flex justify-content-center">
+        <img src={{url_for('views.video')}}>
+        <button type="button" class="btn btn-primary">Résultat</button>
+        <button type="button" class="btn btn-warning">Recommencer</button>
+    </div>
+        
+        #}
+</div>
+
+
+{% endblock start_video %}

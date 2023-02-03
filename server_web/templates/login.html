@@ -1,0 +1,37 @@
+{% extends 'template.html' %}
+{% block login %}
+<div class="container">
+  <div class="row gutters-sm">
+
+    <div class="col-md-12 mb-3 mt-5">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            <form method="POST">
+              <h1> Connexion </h1>
+              <div class="form-group">
+                <label for="exampleInputEmail1 ">adresse email</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                  placeholder="email">
+              </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="mot de passe">
+              </div>
+
+              <div class="form-group ">
+                <button type="submit" class="btn btn-primary mt-4 ">Envoyer</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  {% endblock login %}
